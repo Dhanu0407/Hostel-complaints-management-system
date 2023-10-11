@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+
+    <title>Register</title>
+    
+    <style>
+      body {
+          background-color: #f2f2f2;
+          font-family: Arial, sans-serif;
+      }
+      
+      .container {
+          margin: 0 auto;
+          max-width: 600px;
+          background-color: #FF5733;
+          padding: 20px;
+          border-radius: 5px;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      }
+      header {
+        background-color: #2EC2C0;
+        background-size: cover;
+        background-position: center;
+        height: 15vh;
+      }
+  
+      h1 {
+          text-align: center;
+          color: #333;
+      }
+      
+      label {
+        width: 100%;
+        padding: 10px;
+        background-color: #f9f9f9;
+        font-weight: bold;
+        font-size: 16px;
+
+          
+      }
+      
+      input[type="text"],
+      input[type="email"],
+      input[type="password"],
+      input[type="number"] {
+          width: 100%;
+          padding: 10px;
+          border: 2px solid #2EC2C0;
+          border-radius: 3px;
+          background-color: #f9f9f9;
+          
+          font-size: 16px;
+      }
+      
+      input[type="radio"] {
+          margin-right: 5px;
+      }
+      
+      input[type="submit"],
+      input[type="Button"] {
+          background-color: #2EC2C0;
+          color: #fff;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 3px;
+          cursor: pointer;
+          font-size: 16px;
+      }
+      form {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        margin-bottom: 20vh;
+        margin-top: 5vh;
+        border: 2px solid #2EC2C0;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      }
+      input[type="submit"]:hover,input[type="Button"]:hover {
+          background-color: #3e8e41;
+      }
+      
+      hr {
+          margin-top: 20px;
+          margin-bottom: 20px;
+          border: 0;
+          border-top: 1px solid #ccc;
+      }
+      
+      .error {
+          color: red;
+          margin-top: 5px;
+      }
+      
+      @media screen and (max-width: 480px) {
+          input[type="text"],
+          input[type="email"],
+          input[type="password"],
+          input[type="number"] {
+              width: 100%;
+          }
+      }
+  </style>
+</head>
+<body>
+    <div class="background">
+    <center>
+      <header>
+        <br>
+        <h1>REGISTRATION</h1>
+        <p>Please fill in this form to create an account.</p>
+        <hr>
+      </header>
+      <br>
+      <br>
+      <br>
+        <form method="post" id="form" action="RegDBQueries.php" onsubmit="return validateForm();">
+            <table>
+                <tr>
+                    <td><label for="name">Name:</label></td>
+                    <td><input type="text" name="name" id="name" placeholder="Your full name"></td>
+                </tr>
+                <tr>
+                    <td><br><label for="room_no">Room No:</label></td>
+                    <td><br><input type="text" name="room_no" id="room_no" placeholder="Your room number"></td>
+                </tr>
+                <tr>
+                    <td><br><label for="email">Email:</label></td>
+                    <td><br><input type="email" name="email" id="email" placeholder="Your email"></td>
+                </tr>
+                <tr>
+                    <td><br><label for="password">Password:</label></td>
+                    <td><br><input type="password" placeholder="Password" name="password" id="password"></td>
+                </tr>
+                <tr>
+                    <td><br><label for="confirm_password">Confirm Password:</label></td>
+                    <td><br><input type="password" placeholder="Confirm Password" name="confirm_password" id="confirm_password"></td>
+                </tr>
+                <tr>
+                    <td><br><label for="phone_number">Phone Number:</label></td>
+                    <td><br><input type="number" placeholder="Phone No" name="phone_number" id="phone_number"></td>
+                </tr>
+                <tr>
+                    <td><br><label for="gender">Gender:</label></td>
+                    <td><br><input type="radio" name="gender" value="male"> Male
+                        <input type="radio" name="gender" value="female"> Female
+                        <input type="radio" name="gender" value="other"> Other</td>
+                </tr>
+                <tr>
+                   <center><td colspan="2"><br><input type="submit" class="submit" value="Register" /></td>
+                    <td colspan="2"><br><a href="h1.html"><input type="Button" class="Button" value="Back" /></a></td>
+                   </center>
+
+                </tr>
+                <script>
+                    function validateForm() {
+                        var name = document.getElementById("name").value;
+                        var roomNo = document.getElementById("room_no").value;
+                        var email = document.getElementById("email").value;
+                        var password = document.getElementById("password").value;
+                        var confirmPassword = document.getElementById("confirm_password").value;
+                        var phoneNumber = document.getElementById("phone_number").value;
+                        var gender = document.querySelector("input[name=gender]:checked");
+                
+                        if (name === "" || roomNo === "" || email === "" || password === "" || confirmPassword === "" || phoneNumber === "" || gender === null) {
+                            alert("Please fill in all the required fields.");
+                            return false;
+                        }
+                        return true;
+                    }
+                </script>
+            </table>
+        </form>
+    </center>
+</div>
+</body>
+</html>
